@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboardadmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Admin Panel</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/html/dashboardadmin.html" >Dashboard</a></li>
+            <li><a href="/html/studentinternspage.html">Student Interns</a></li>
+            <li><a href="/html/employeradmin.html">Employers</a></li>
+            <li><a href="/html/internshipmanagement.html " class="active">Internship Management</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="navbar">
+            <h1>Internship Management</h1>
+        </div>
+
+        <!-- Pending Internships Section -->
+        <div class="pending-section">
+            <h2>Pending Internships for Approval</h2>
+            <div class="search-bar">
+                <input type="text" id="pendingSearchInput" placeholder="Search pending internships..." onkeyup="filterPendingInternships()">
+            </div>
+            <div class="table" id="pendingInternshipsTable">
+                <div class="row header">
+                    <span>Position</span>
+                    <span>Company</span>
+                    <span>Posted On</span>
+                    <span>Actions</span>
+                </div>
+                <div class="row">
+                    <span>Software Developer</span>
+                    <span>TechCorp</span>
+                    <span>2024-11-01</span>
+                    <span>
+                        <button class="approve" onclick="approveInternship(this)">Approve</button>
+                        <button class="reject" onclick="rejectInternship(this)">Reject</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approved Internships Section -->
+        <div class="approved-section">
+            <h2>Approved Internships</h2>
+            <div class="search-bar">
+                <input type="text" id="approvedSearchInput" placeholder="Search approved internships..." onkeyup="filterApprovedInternships()">
+            </div>
+            <div class="table" id="approvedInternshipsTable">
+                <div class="row header">
+                    <span>Position</span>
+                    <span>Company</span>
+                    <span>Applicants</span>
+                    <span>Status</span>
+                    <span>Actions</span>
+                </div>
+                <div class="row">
+                    <span>Network Engineer</span>
+                    <span>CyberTech</span>
+                    <span>12</span>
+                    <span>Active</span>
+                    <span>
+                        <button class="view">View</button>
+                        <button class="deactivate">Deactivate</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter Pending Internships
+        function filterPendingInternships() {
+            const input = document.getElementById('pendingSearchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#pendingInternshipsTable .row:not(.header)');
+
+            rows.forEach(row => {
+                const position = row.children[0].textContent.toLowerCase();
+                const company = row.children[1].textContent.toLowerCase();
+                row.style.display = position.includes(input) || company.includes(input) ? '' : 'none';
+            });
+        }
+
+        // Filter Approved Internships
+        function filterApprovedInternships() {
+            const input = document.getElementById('approvedSearchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#approvedInternshipsTable .row:not(.header)');
+
+            rows.forEach(row => {
+                const position = row.children[0].textContent.toLowerCase();
+                const company = row.children[1].textContent.toLowerCase();
+                row.style.display = position.includes(input) || company.includes(input) ? '' : 'none';
+            });
+        }
+
+        // Approve Internship
+        function approveInternship(button) {
+            alert('Internship approved!');
+            button.closest('.row').remove();
+        }
+
+        // Reject Internship
+        function rejectInternship(button) {
+            alert('Internship rejected!');
+            button.closest('.row').remove();
+        }
+    </script>
+</body>
+</html>

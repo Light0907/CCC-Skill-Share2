@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCC - SkillLink</title>
+<link rel="stylesheet" href="/css/listinternship.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+        <img src="/images/CCC Logo 1.png" alt="CCC Logo">
+    <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+        <h1>CCC - SkillLink</h1>
+    </a>
+</div>
+    <div class="nav-links">
+        <a href="#" id="F-internship">Find Internship</a>
+        <a href="#" id="P-internship">Post Internship</a>
+        <img src="/images/icons8-user-96.png" alt="User Icon" id="user-icon">
+        <img src="/images/icons8-search-150.png" alt="Search Icon" id="search-icon">
+    </div>
+</div>
+  
+<div class="container">
+    <h2>Company Name: Samsung</h2>
+    <h3>List of Internships:</h3>
+  
+    <!-- Internship Card -->
+    <div class="internship-card">
+      <div class="internship-details">
+        <h4>Software Engineer – Information Technology</h4>
+        <p class="applicant-count" onclick="viewApplicants('Software Engineer – Information Technology', 2)">
+          Number of Applicants: 2
+        </p>
+      </div>
+      <div class="button-group">
+        <button class="view-button" onclick="viewInternship()">View</button>
+        <button class="edit-button" onclick="editInternship()">Edit</button>
+      </div>
+    </div>
+  
+    <div class="internship-card">
+      <div class="internship-details">
+        <h4>Trouble Shooting – Information Technology</h4>
+        <p class="applicant-count" onclick="viewApplicants('Trouble Shooting – Information Technology', 6)">
+          Number of Applicants: 6
+        </p>
+      </div>
+      <div class="button-group">
+        <button class="view-button" onclick="viewInternship()">View</button>
+        <button class="edit-button" onclick="editInternship()">Edit</button>
+      </div>
+    </div>
+  
+    <div class="internship-card">
+      <div class="internship-details">
+        <h4>Network Engineer – Information Technology</h4>
+        <p class="applicant-count" onclick="viewApplicants('Network Engineer – Information Technology', 12)">
+          Number of Applicants: 12
+        </p>
+      </div>
+      <div class="button-group">
+        <button class="view-button" onclick="viewInternship()">View</button>
+        <button class="edit-button" onclick="editInternship()">Edit</button>
+      </div>
+    </div>
+  
+  </div>
+
+<script>
+  // Function for viewing internship (redirect to viewpostinternship.html)
+  function viewInternship() {
+    window.location.href = 'viewpostinternship.html';
+  }
+
+  // Function for editing internship (redirect to postinternshippage.html)
+  function editInternship() {
+    window.location.href = 'postinternshippage.html';
+  }
+
+  // Function for viewing applicants
+  function viewApplicants(jobTitle, applicantCount) {
+    // Save the relevant data to localStorage (if necessary)
+    localStorage.setItem('jobTitle', jobTitle);
+    localStorage.setItem('applicantCount', applicantCount);
+
+    // Redirect to a specific applicants page
+    window.location.href = 'internapplicants.html';
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCC - SkillLink</title>
+<link rel="stylesheet" href="/css/scheduleinterview.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+            <img src="/images/CCC Logo 1.png" alt="CCC Logo">
+        <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+            <h1>CCC - SkillLink</h1>
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="#" id="F-internship">Find Internship</a>
+        <a href="#" id="P-internship">Post Internship</a>
+        <img src="/images/icons8-user-96.png" alt="User Icon" id="user-icon">
+        <img src="/images/icons8-search-150.png" alt="Search Icon" id="search-icon">
+    </div>
+</div>
+
+<div class="review-container">
+    <h2>Review Application</h2>
+
+    <div class="review-item">
+        <strong>Full Name:</strong> <span id="fullName">Not provided</span>
+    </div>
+    <div class="review-item">
+        <strong>Email:</strong> <span id="email">Not provided</span>
+    </div>
+    <div class="review-item">
+        <strong>Phone Number:</strong> <span id="phone">Not provided</span>
+    </div>
+    
+    <div class="review-item">
+        <strong>Resume:</strong> 
+        <span id="resumeLink">No resume uploaded</span>
+        <button id="resumeViewButton" class="pdf-button" onclick="viewPDF('resume')">View Resume</button>
+        <div class="pdf-viewer" id="resumeViewerContainer">
+            <button class="close-viewer" onclick="closeViewer('resume')">X</button>
+            <iframe id="resumeViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <button class="submit-button" onclick="approveApplication()">Approve Application</button>
+
+    <!-- Calendar for scheduling a meeting (initially hidden) -->
+    <div class="calendar-container" id="calendarContainer">
+        <h3>Select a Meeting Date and Time</h3>
+        <input type="date" id="meetingDate" required>
+        <input type="time" id="meetingTime" required>
+        <button class="schedule-button" onclick="scheduleMeeting()">Schedule Meeting</button>
+    </div>
+</div>
+
+<script>
+// Retrieve data from localStorage and display it
+document.getElementById('fullName').innerText = localStorage.getItem('fullName') || 'Not provided';
+document.getElementById('email').innerText = localStorage.getItem('email') || 'Not provided';
+document.getElementById('phone').innerText = localStorage.getItem('phone') || 'Not provided';
+
+const resumeData = localStorage.getItem('resumeData');
+const resumeName = localStorage.getItem('resumeName');
+
+if (resumeData) {
+    document.getElementById('resumeLink').innerHTML = `<a href="${resumeData}" download="${resumeName}">Download Resume</a>`;
+}
+
+function viewPDF(type) {
+    if (type === 'resume' && resumeData) {
+        const viewer = document.getElementById('resumeViewer');
+        viewer.src = resumeData;
+        document.getElementById('resumeViewerContainer').style.display = 'block';
+    } else {
+        alert('No document uploaded');
+    }
+}
+
+function closeViewer(type) {
+    if (type === 'resume') {
+        document.getElementById('resumeViewerContainer').style.display = 'none';
+    }
+}
+
+function approveApplication() {
+    // Show the calendar container when the application is approved
+    document.getElementById('calendarContainer').style.display = 'block';
+}
+
+function scheduleMeeting() {
+    const meetingDate = document.getElementById('meetingDate').value;
+    const meetingTime = document.getElementById('meetingTime').value;
+
+    if (meetingDate && meetingTime) {
+        alert(`Meeting scheduled on ${meetingDate} at ${meetingTime}`);
+        document.getElementById('calendarContainer').style.display = 'none'; // Hide the calendar after scheduling
+    } else {
+        alert('Please select both a date and time for the meeting.');
+    }
+}
+</script>
+
+</body>
+</html>

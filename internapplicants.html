@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCC - SkillLink</title>
+<link rel="stylesheet" href="/css/internapplicants.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+            <img src="/images/CCC Logo 1.png" alt="CCC Logo">
+        <a href="/html/landingpage.html" style="text-decoration: none; color: inherit;">
+            <h1>CCC - SkillLink</h1>
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="#" id="F-internship">Find Internship</a>
+        <a href="#" id="P-internship">Post Internship</a>
+        <img src="/images/icons8-user-96.png" alt="User Icon" id="user-icon">
+        <img src="/images/icons8-search-150.png" alt="Search Icon" id="search-icon">
+    </div>
+</div>
+
+<div class="container">
+    <h1>List of Applicants:</h1>
+    <div class="cards">
+        <!-- Applicant 1 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Jonas P. Galicia</h2>
+            <p>Bachelor of Science in Information Technology</p>
+            <p>Calamba City<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+        <!-- Applicant 2 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Jane D. Cruz</h2>
+            <p>Bachelor of Science in Computer Science</p>
+            <p>Santa Rosa City<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+        <!-- Applicant 3 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Michael A. Santos</h2>
+            <p>Bachelor of Science in Software Engineering</p>
+            <p>Biñan City<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+    </div>
+    <div class="cards">
+        <!-- Applicant 4 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Anna B. Lopez</h2>
+            <p>Bachelor of Science in Information Systems</p>
+            <p>San Pedro City<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+        <!-- Applicant 5 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Mark C. Reyes</h2>
+            <p>Bachelor of Science in Computer Engineering</p>
+            <p>Los Baños<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+        <!-- Applicant 6 -->
+        <div class="card">
+            <div class="card-image"></div>
+            <h2>Sarah E. Bautista</h2>
+            <p>Bachelor of Science in Data Science</p>
+            <p>Bay<br>Laguna</p>
+            <button class="details-button" onclick="viewDetails()">View more details</button>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div style="margin-top: 30px; text-align: center;">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+</div>
+
+<script>
+    function viewDetails() {
+        alert("Redirecting to detailed view page...");
+        // Add redirect logic if needed
+    }
+
+    function goBack() {
+        window.history.back(); // Redirects to the previous page
+    }
+</script>
+
+</body>
+</html>

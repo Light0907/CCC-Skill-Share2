@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Lexend Deca-Regular';
+    src: url('/fonts/Lexend_Deca/static/LexendDeca-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Londrina Solid-Regular';
+    src: url('/fonts/Londrina_Solid/LondrinaSolid-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Londrina Solid-Light';
+    src: url('/fonts/Londrina_Solid/LondrinaSolid-Light.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca-Regular';
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #0b1f53;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    font-family: 'Londrina Solid', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a.active {
+    background-color: #003580;
+}
+
+.nav-links a:hover {
+    background-color: #003580;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navbar h1 {
+    font-family: 'Londrina Solid', sans-serif;
+    font-size: 24px;
+    color: #0b1f53;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 16px;
+    color: #0b1f53;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0b1f53;
+}
